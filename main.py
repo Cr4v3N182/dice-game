@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+from functions import roll_dice1, roll_dice2
 
 sg.theme("DarkBlue15")
 
@@ -12,7 +13,7 @@ p1_dice_result = sg.Text("Click roll to get a result", key='p1dice')
 p2_roll_button = sg.Button("Player Two Roll", key='user2b')
 p2_info = sg.Text("", key='p2info')
 p2_dice_result = sg.Text("Click roll to get a result", key='p2dice')
-output = sg.Text("", key="output")
+output = sg.Text("", key='output')
 exit_button = sg.Button("Exit", key="exit", pad=15)
 
 layout = [[label],
@@ -31,5 +32,10 @@ while True:
             break
         case sg.WIN_CLOSED:
             break
+        case "user1b":
+            roll_dice1()
+        case "user2b":
+            roll_dice2()
+
 
 window.close()
