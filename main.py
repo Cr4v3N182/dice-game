@@ -1,10 +1,8 @@
 import PySimpleGUI as sg
-from functions import roll_dice1, roll_dice2
+from functions import *
 
 sg.theme("DarkBlue15")
 
-p1_dict = {}
-p2_dict = {}
 
 label = sg.Text("Press roll to get a result")
 p1_roll_button = sg.Button("Player One Roll", key='user1b')
@@ -34,8 +32,10 @@ while True:
             break
         case "user1b":
             roll_dice1()
+            p1_dice_result.update(value=p1_list)
         case "user2b":
             roll_dice2()
+            p2_dice_result.update(value=p2_list)
 
 
 window.close()

@@ -1,24 +1,25 @@
 import random
 
 set = [1, 2, 3, 4, 5]
-set1 = []
+p1_list = []
+p2_list = []
 
 #player_1 shuffle
 def roll_dice1():
     for el in set:
         el = random.randint(1, 6)
-        set1.append(el)
-    return set1
+        p1_list.append(el)
+    return p1_list
 
-print(roll_dice1())
+#print(roll_dice1())
 
 #player_2 shuffle
 def roll_dice2():
     for el in set:
         el = random.randint(1, 6)
-        set2.append(el)
-    return set1
+        p2_list.append(el)
+    return p2_list
 
-print(roll_dice2())
+#print(roll_dice2())
 
     
