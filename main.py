@@ -46,7 +46,7 @@ while True:
             p1_info.update(value=f"Player one score: {sum(p1_list)}")
         case "user2b":
             roll_dice2()
-            p2_dice_result.update(value=p2_list,text_color="red")
+            p2_dice_result.update(value=p2_list)
             p2_info.update(value=f"Player two score: {sum(p2_list)}")
         case "check":
             if (sum(p1_list) > sum(p2_list)):
