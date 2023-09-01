@@ -56,7 +56,7 @@ while True:
                 output.update(value=("player one wins").title())
             elif (sum(p1_list) < sum(p2_list)):
                 s2 += 1
-                p2_score.update(value=(f"player one score: {s2}").title())
+                p2_score.update(value=(f"player two score: {s2}").title())
                 output.update(value=("player two wins").title())
             else:
                 output.update(value=("draw").title())
