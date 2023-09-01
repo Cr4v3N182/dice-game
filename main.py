@@ -18,8 +18,8 @@ exit_button = sg.Button("Exit", key="exit")
 layout = [[label],
           [p1_roll_button, p2_roll_button],
           [p1_dice_result, p2_dice_result],
-          [check_result_button],
           [p1_info, p2_info],
+          [check_result_button],
           [output],
           [exit_button]]
 
@@ -35,9 +35,13 @@ while True:
         case "user1b":
             roll_dice1()
             p1_dice_result.update(value=p1_list)
+            p1_info.update(value=f"Player one score: {sum(p1_list)}")
         case "user2b":
             roll_dice2()
             p2_dice_result.update(value=p2_list,text_color="red")
+            p2_info.update(value=f"Player two score: {sum(p2_list)}")
+        #case "check":
+
 
 
 window.close()
