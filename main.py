@@ -55,8 +55,8 @@ while True:
             else:
                 output.update(value=("draw").title())
         case 'clear':
-            p1_list = []
-            p2_list = []
+            p1_list.clear()
+            p2_list.clear()
             p1_dice_result.update(value="")
             p2_dice_result.update(value="")
             continue
