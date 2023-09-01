@@ -28,6 +28,12 @@ layout = [[label],
 window = sg.Window("Dice Game", layout=layout, size=(400,250), element_justification='c', font=("Havetica", 10))
 
 while True:
+    if s1 == 10:
+        sg.popup(("player one wins").title())
+        break
+    elif s2 == 10:
+        sg.popup(("player two wins").title())
+        break
     event, values = window.read()
     match event:
         case "exit":
