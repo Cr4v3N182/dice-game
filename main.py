@@ -3,14 +3,15 @@ from functions import *
 
 sg.theme("DarkBlue15")
 
-
 label = sg.Text("Press roll to get a result")
 p1_roll_button = sg.Button("Player One Roll", key='user1b')
 p1_info = sg.Text("", key='p1info')
 p1_dice_result = sg.Text("Click roll to get a result", key='p1dice')
+p1_score = sg.Text((f"player one score: {s1}").title(), key='p1score')
 p2_roll_button = sg.Button("Player Two Roll", key='user2b')
 p2_info = sg.Text("", key='p2info')
 p2_dice_result = sg.Text("Click roll to get a result", key='p2dice')
+p2_score = sg.Text((f"player two score: {s2}").title(), key='p2score')
 check_result_button = sg.Button("Check", key='check')
 output = sg.Text("", key='output')
 exit_button = sg.Button("Exit", key="exit")
@@ -21,7 +22,7 @@ layout = [[label],
           [p1_info, p2_info],
           [check_result_button],
           [output],
-          [exit_button]]
+          [p1_score, exit_button, p2_score]]
 
 window = sg.Window("Dice Game", layout=layout, size=(400,250), element_justification='c', font=("Havetica", 10))
 
@@ -40,7 +41,18 @@ while True:
             roll_dice2()
             p2_dice_result.update(value=p2_list,text_color="red")
             p2_info.update(value=f"Player two score: {sum(p2_list)}")
-        #case "check":
+        case "check":
+            if (sum(p1_list) > sum(p2_list)):
+                p1_score
+                s1 += 1
+                p1_score.update(value=(f"player one score: {s1}").title())
+                output.update(value=("player one wins").title())
+            elif (sum(p1_list) < sum(p2_list)):
+                s2 += 1
+                p2_score.update(value=(f"player one score: {s2}").title())
+                output.update(value=("player two wins").title())
+            else:
+                output.update(value=("draw").title())
 
 
 
