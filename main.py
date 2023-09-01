@@ -65,6 +65,7 @@ while True:
             p2_list.clear()
             p1_dice_result.update(value="")
             p2_dice_result.update(value="")
+            output.update(value="")
             continue
 
 window.close()
