@@ -4,6 +4,9 @@ set = [1, 2, 3, 4, 5]
 p1_list = []
 p2_list = []
 
+s1 = 0
+s2 = 0
+
 #player_1 shuffle
 def roll_dice1():
     for el in set:
