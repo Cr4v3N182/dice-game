@@ -15,12 +15,13 @@ p2_score = sg.Text((f"player two score: {s2}").title(), key='p2score')
 check_result_button = sg.Button("Check", key='check')
 output = sg.Text("", key='output')
 exit_button = sg.Button("Exit", key="exit")
+clear_button = sg.Button("CE", key='clear')
 
 layout = [[label],
           [p1_roll_button, p2_roll_button],
           [p1_dice_result, p2_dice_result],
           [p1_info, p2_info],
-          [check_result_button],
+          [check_result_button, clear_button],
           [output],
           [p1_score, exit_button, p2_score]]
 
@@ -53,7 +54,11 @@ while True:
                 output.update(value=("player two wins").title())
             else:
                 output.update(value=("draw").title())
-
-
+        case 'clear':
+            p1_list = []
+            p2_list = []
+            p1_dice_result.update(value="")
+            p2_dice_result.update(value="")
+            continue
 
 window.close()
